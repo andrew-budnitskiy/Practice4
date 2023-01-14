@@ -1,0 +1,5 @@
+
+target 'Practice2' do
+  use_frameworks!
+end
+
