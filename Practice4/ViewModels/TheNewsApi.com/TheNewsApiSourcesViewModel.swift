@@ -18,6 +18,7 @@ class TheNewsApiSourcesViewModel : ObservableObject, SourcesListViewModelProtoco
         self.newsApi = newsApi
     }
 
+    private var bag = Set<AnyCancellable>()
     @Published var list: [TheNewsApiSource] = []
     @Published var canLoad = false
 
@@ -30,26 +31,18 @@ class TheNewsApiSourcesViewModel : ObservableObject, SourcesListViewModelProtoco
         self
             .newsApi
             .fetchTheNewsApiSources()
-
-            .map({ receivedData -> [TheNewsApiSource] in
-                return receivedData.data ?? []
-            })
-            .catch({ error -> Just<[TheNewsApiSource]> in
-                print(error.localizedDescription)
-                return Just([])
-            })
-            .assign(to: &self.$list)
-
-//        DefaultAPI.theNewsApiSources { [weak self]  data, error in
-//
-//            if error == nil {
-//                self?.list.append(contentsOf: (data?.data ?? []))
-//            } else {
-//                print("Error \(String(describing: error))")
-//            }
-//            self?.canLoad = true
-//
-//        }
+            .sink {[weak self] completion in
+                switch completion {
+                case .failure(let error):
+                    print("Error: \(error.localizedDescription)")
+                case .finished:
+                    break
+                }
+                self?.canLoad = true
+            } receiveValue: {[weak self] receivedData in
+                self?.list = receivedData.data ?? []
+            }
+            .store(in: &self.bag)
 
     }
 }

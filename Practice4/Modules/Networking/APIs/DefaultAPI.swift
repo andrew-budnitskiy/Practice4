@@ -394,31 +394,40 @@ extension DefaultAPI: NewsApiNetworkingProtocol {
 
     }
 
-    static func fetchNewsApiSources(response: @escaping NewsApiSourcesResult) {
+    static func fetchNewsApiSources() ->Future<NewsApiSources, Error> {
 
-        DefaultAPI.newsApiSources { data, error in
+        Future { promise in
 
-            if let error = error {
-                response(.failure(error))
-            } else {
-                response(.success(data))
+            DefaultAPI.newsApiSources { data, error in
+
+                if let error = error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(data!))
+                }
+
             }
 
         }
+
     }
 
     static func fetchTheNewsApiResults(page: Int,
                                        domains: String,
-                                       limit: Int = 25,
-                                       response: @escaping TheNewsApiResultsResult) {
-        DefaultAPI.theNewsApiResults(page: page,
-                                     limit: limit,
-                                     domains: domains) { data, error in
+                                       limit: Int = 25) -> Future<TheNewsApiResults, Error> {
 
-            if let error = error {
-                response(.failure(error))
-            } else {
-                response(.success(data))
+        return Future { promise in
+
+            DefaultAPI.theNewsApiResults(page: page,
+                                         limit: limit,
+                                         domains: domains) { data, error in
+
+                if let error = error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(data!))
+                }
+
             }
 
         }
@@ -426,23 +435,23 @@ extension DefaultAPI: NewsApiNetworkingProtocol {
 
     static func fetchNewsApiResults(sources: String,
                                     page: Int,
-                                    pageSize: Int = 25,
-                                    response: @escaping NewsApiResultsResult) {
+                                    pageSize: Int = 25) -> Future<NewsApiResults, Error> {
 
-        DefaultAPI.newsApiResults(sources: sources,
-                                  page: page,
-                                  pageSize: pageSize) { data, error in
+        Future { promise in
 
-            if let error = error {
-                response(.failure(error))
-            } else {
-                response(.success(data))
+            DefaultAPI.newsApiResults(sources: sources,
+                                      page: page,
+                                      pageSize: pageSize) { data, error in
+
+                if let error = error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(data!))
+                }
             }
 
         }
 
     }
-
-
 
 }

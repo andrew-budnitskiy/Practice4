@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 //ViewModel для запроса списка источников новостей на NewsApi.org
 //Без пейджинга
@@ -17,38 +18,32 @@ class NewsApiSourcesViewModel : ObservableObject, SourcesListViewModelProtocol {
         self.newsApi = newsApi
     }
 
-    var list: [NewsApiSource] = []
+    private var bag = Set<AnyCancellable>()
+
+    @Published var list: [NewsApiSource] = []
     @Published var canLoad: Bool = true
 
     func fetchData() {
-        guard canLoad == true else {
+        guard self.canLoad == true else {
             return
         }
 
-        canLoad = false
-
-        self.newsApi.fetchNewsApiSources { [weak self] response in
-            switch response {
-            case .success(let data):
-                self?.list.append(contentsOf: (data?.sources ?? []))
-            case .failure(let error):
-                print("Error \(String(describing: error))")
+        self.canLoad = false
+        self
+            .newsApi
+            .fetchNewsApiSources()
+            .sink {[weak self] completion in
+                switch completion {
+                case .failure(let error):
+                    print("Error: \(error.localizedDescription)")
+                case .finished:
+                    break
+                }
+                self?.canLoad = true
+            } receiveValue: {[weak self] receivedData in
+                self?.list = receivedData.sources ?? []
             }
-            self?.canLoad = true
-        }
-        self.canLoad = true
-
-//        DefaultAPI.newsApiSources { [weak self]  data, error in
-//
-//            if error == nil {
-//                self?.list.append(contentsOf: (data?.sources ?? []))
-//            } else {
-//                print("Error \(String(describing: error))")
-//
-//            }
-//            self?.canLoad = true
-//
-//        }
+            .store(in: &self.bag)
 
     }
 }

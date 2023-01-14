@@ -18,12 +18,10 @@ protocol NewsApiNetworkingProtocol {
     static func fetchTheNewsApiSources() -> Future<TheNewsApiSources, Error>
     static func fetchTheNewsApiResults(page: Int,
                                        domains: String,
-                                       limit: Int,
-                                       response: @escaping TheNewsApiResultsResult)
-    static func fetchNewsApiSources(response: @escaping NewsApiSourcesResult)
+                                       limit: Int) -> Future<TheNewsApiResults, Error>
+    static func fetchNewsApiSources() -> Future<NewsApiSources, Error>
     static func fetchNewsApiResults(sources: String,
                                     page: Int,
-                                    pageSize: Int,
-                                    response: @escaping NewsApiResultsResult)
+                                    pageSize: Int) -> Future<NewsApiResults, Error>
 
 }
