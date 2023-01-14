@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Combine
 
 typealias NewsApiSourcesResult = (Result<NewsApiSources?, Error>) -> Void
 typealias NewsApiResultsResult = (Result<NewsApiResults?, Error>) -> Void

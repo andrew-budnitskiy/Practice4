@@ -102,7 +102,7 @@
 		CEC5672827FC62A900CF3684 /* NewsResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsResultCell.swift; sourceTree = "<group>"; };
 		CEC5672A27FC69E200CF3684 /* NewsApiResultsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsApiResultsViewModel.swift; sourceTree = "<group>"; };
 		CEC5672C27FC6E4A00CF3684 /* NewsResultsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsResultsList.swift; sourceTree = "<group>"; };
-		CEE61E3B27F46CF1009F111C /* Practice2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE61E3B27F46CF1009F111C /* Practice4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE61E3E27F46CF1009F111C /* Practice2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice2App.swift; sourceTree = "<group>"; };
 		CEE61E4027F46CF2009F111C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CEE61E4227F46CF5009F111C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 		CEE61E3227F46CF1009F111C = {
 			isa = PBXGroup;
 			children = (
-				CEE61E3D27F46CF1009F111C /* Practice2 */,
+				CEE61E3D27F46CF1009F111C /* Practice4 */,
 				CEE61E3C27F46CF1009F111C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -300,12 +300,12 @@
 		CEE61E3C27F46CF1009F111C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEE61E3B27F46CF1009F111C /* Practice2.app */,
+				CEE61E3B27F46CF1009F111C /* Practice4.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CEE61E3D27F46CF1009F111C /* Practice2 */ = {
+		CEE61E3D27F46CF1009F111C /* Practice4 */ = {
 			isa = PBXGroup;
 			children = (
 				0B988DC027F9D89200927DCE /* ViewModels */,
@@ -315,15 +315,15 @@
 				CEE61E4027F46CF2009F111C /* ContentView.swift */,
 				CEE61E4227F46CF5009F111C /* Assets.xcassets */,
 			);
-			path = Practice2;
+			path = Practice4;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CEE61E3A27F46CF1009F111C /* Practice2 */ = {
+		CEE61E3A27F46CF1009F111C /* Practice4 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEE61E4927F46CF5009F111C /* Build configuration list for PBXNativeTarget "Practice2" */;
+			buildConfigurationList = CEE61E4927F46CF5009F111C /* Build configuration list for PBXNativeTarget "Practice4" */;
 			buildPhases = (
 				CEE61E3727F46CF1009F111C /* Sources */,
 				CEE61E3827F46CF1009F111C /* Frameworks */,
@@ -333,12 +333,12 @@
 			);
 			dependencies = (
 			);
-			name = Practice2;
+			name = Practice4;
 			packageProductDependencies = (
 				0B93D6B2286CE65C0004BF56 /* Practice3Package */,
 			);
 			productName = Practice2;
-			productReference = CEE61E3B27F46CF1009F111C /* Practice2.app */;
+			productReference = CEE61E3B27F46CF1009F111C /* Practice4.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -356,7 +356,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CEE61E3627F46CF1009F111C /* Build configuration list for PBXProject "Practice2" */;
+			buildConfigurationList = CEE61E3627F46CF1009F111C /* Build configuration list for PBXProject "Practice4" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -372,7 +372,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CEE61E3A27F46CF1009F111C /* Practice2 */,
+				CEE61E3A27F46CF1009F111C /* Practice4 */,
 			);
 		};
 /* End PBXProject section */
@@ -622,7 +622,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CEE61E3627F46CF1009F111C /* Build configuration list for PBXProject "Practice2" */ = {
+		CEE61E3627F46CF1009F111C /* Build configuration list for PBXProject "Practice4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEE61E4727F46CF5009F111C /* Debug */,
@@ -631,7 +631,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEE61E4927F46CF5009F111C /* Build configuration list for PBXNativeTarget "Practice2" */ = {
+		CEE61E4927F46CF5009F111C /* Build configuration list for PBXNativeTarget "Practice4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEE61E4A27F46CF5009F111C /* Debug */,
