@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 import Practice3Package
+import Combine
 
 open class DefaultAPI {
     /**
@@ -375,14 +376,18 @@ open class DefaultAPI {
 
 extension DefaultAPI: NewsApiNetworkingProtocol {
 
-    static func fetchTheNewsApiSources(response: @escaping TheNewsApiSourcesResult) {
+    static func fetchTheNewsApiSources() -> Future<TheNewsApiSources, Error> {
 
-        DefaultAPI.theNewsApiSources { data, error in
+        return Future { promise in
 
-            if let error = error {
-                response(.failure(error))
-            } else {
-                response(.success(data))
+            DefaultAPI.theNewsApiSources { data, error in
+
+                if let error = error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(data!))
+                }
+
             }
 
         }

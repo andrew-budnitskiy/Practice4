@@ -15,7 +15,7 @@ typealias TheNewsApiResultsResult = (Result<TheNewsApiResults?, Error>) -> Void
 
 protocol NewsApiNetworkingProtocol {
 
-    static func fetchTheNewsApiSources(response: @escaping TheNewsApiSourcesResult)
+    static func fetchTheNewsApiSources() -> Future<TheNewsApiSources, Error>
     static func fetchTheNewsApiResults(page: Int,
                                        domains: String,
                                        limit: Int,

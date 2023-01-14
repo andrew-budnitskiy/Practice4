@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 //ViewModel для запроса списка источников новостей на TheNewsApi.com
 //Без пейджинга
@@ -17,27 +18,27 @@ class TheNewsApiSourcesViewModel : ObservableObject, SourcesListViewModelProtoco
         self.newsApi = newsApi
     }
 
-
-    var list: [TheNewsApiSource] = []
-    @Published var canLoad: Bool = true
+    @Published var list: [TheNewsApiSource] = []
+    @Published var canLoad = false
 
     func fetchData() {
-        guard canLoad == true else {
+        guard self.canLoad else {
             return
         }
 
-        canLoad = false
+        self.canLoad = false
+        self
+            .newsApi
+            .fetchTheNewsApiSources()
 
-        self.newsApi.fetchTheNewsApiSources { [weak self] response in
-            switch response {
-            case .success(let data):
-                self?.list.append(contentsOf: (data?.data ?? []))
-            case .failure(let error):
-                print("Error \(String(describing: error))")
-            }
-            self?.canLoad = true
-        }
-
+            .map({ receivedData -> [TheNewsApiSource] in
+                return receivedData.data ?? []
+            })
+            .catch({ error -> Just<[TheNewsApiSource]> in
+                print(error.localizedDescription)
+                return Just([])
+            })
+            .assign(to: &self.$list)
 
 //        DefaultAPI.theNewsApiSources { [weak self]  data, error in
 //
