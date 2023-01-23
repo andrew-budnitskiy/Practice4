@@ -8,7 +8,7 @@
 import Foundation
 
 enum NewsItem: Int, Hashable {
-    case newsApi
+    case newsApi = 0
     case newsData
 }
 

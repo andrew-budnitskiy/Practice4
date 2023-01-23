@@ -20,7 +20,7 @@ class TheNewsApiSourcesViewModel : ObservableObject, SourcesListViewModelProtoco
 
     private var bag = Set<AnyCancellable>()
     @Published var list: [TheNewsApiSource] = []
-    @Published var canLoad = false
+    @Published var canLoad = true
 
     func fetchData() {
         guard self.canLoad else {

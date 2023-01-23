@@ -18,7 +18,7 @@ import SwiftUI
 struct ContentView: View {
 
     private let pageCoordinator: PageCoordinatorProtocol!
-    @State var selectedNewsSource: NewsItem?
+    @State var selectedNewsSource: NewsItem = .newsData
 
     var body: some View {
             self.segmentedControl()
@@ -42,16 +42,16 @@ extension ContentView {
 
             Picker("Select a news source?", selection: $selectedNewsSource) {
 
-                ForEach(items, id: \.self ) {
-                    Text($0.title)
-                        .tag($0.rawValue)
+                ForEach(items, id: \.self ) { item in
+                    Text(item.title)
+                        .tag(item.rawValue)
                 }
             }
             .pickerStyle(.segmented)
 
             self
                 .pageCoordinator
-                .view(by: self.selectedNewsSource ?? self.pageCoordinator.defaultPage)
+                .view(by: self.selectedNewsSource)
             Spacer()
         }
 
