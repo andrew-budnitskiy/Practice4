@@ -24,6 +24,7 @@
 		0BEBA56D280345FA0072F90E /* NewsSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEBA56C280345FA0072F90E /* NewsSourceProtocol.swift */; };
 		0BEBA56F28034C6D0072F90E /* NewsListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEBA56E28034C6D0072F90E /* NewsListViewModelProtocol.swift */; };
 		0BEBA577280364550072F90E /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEBA576280364550072F90E /* Types.swift */; };
+		1D21FD783763F43407FE474D /* Pods_Practice4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5327AFA0C96AE6C15E7F9B /* Pods_Practice4.framework */; };
 		CE821BB427FEBF8800E4AAF4 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE821BB327FEBF8800E4AAF4 /* BackButton.swift */; };
 		CE821BB627FEC08200E4AAF4 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE821BB527FEC08200E4AAF4 /* NavigationBar.swift */; };
 		CE821BB827FEDC9200E4AAF4 /* NewDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE821BB727FEDC9200E4AAF4 /* NewDetailInfo.swift */; };
@@ -74,6 +75,9 @@
 		0BEBA56C280345FA0072F90E /* NewsSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSourceProtocol.swift; sourceTree = "<group>"; };
 		0BEBA56E28034C6D0072F90E /* NewsListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModelProtocol.swift; sourceTree = "<group>"; };
 		0BEBA576280364550072F90E /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		82B8B0B7AF68F5775FC397D1 /* Pods-Practice4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice4.debug.xcconfig"; path = "Target Support Files/Pods-Practice4/Pods-Practice4.debug.xcconfig"; sourceTree = "<group>"; };
+		9A84238F197E8888543BDA5D /* Pods-Practice4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice4.release.xcconfig"; path = "Target Support Files/Pods-Practice4/Pods-Practice4.release.xcconfig"; sourceTree = "<group>"; };
+		9E5327AFA0C96AE6C15E7F9B /* Pods_Practice4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practice4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE821BB327FEBF8800E4AAF4 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		CE821BB527FEC08200E4AAF4 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		CE821BB727FEDC9200E4AAF4 /* NewDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDetailInfo.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B93D6B3286CE65C0004BF56 /* Practice3Package in Frameworks */,
+				1D21FD783763F43407FE474D /* Pods_Practice4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +299,8 @@
 			children = (
 				CEE61E3D27F46CF1009F111C /* Practice4 */,
 				CEE61E3C27F46CF1009F111C /* Products */,
+				FB5428A2598D8AEFDBA3CDE1 /* Pods */,
+				F9A1617209A3BCB7C3515037 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -318,6 +325,24 @@
 			path = Practice4;
 			sourceTree = "<group>";
 		};
+		F9A1617209A3BCB7C3515037 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E5327AFA0C96AE6C15E7F9B /* Pods_Practice4.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB5428A2598D8AEFDBA3CDE1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82B8B0B7AF68F5775FC397D1 /* Pods-Practice4.debug.xcconfig */,
+				9A84238F197E8888543BDA5D /* Pods-Practice4.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,6 +350,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEE61E4927F46CF5009F111C /* Build configuration list for PBXNativeTarget "Practice4" */;
 			buildPhases = (
+				C25DD50D72BFE67CD262048D /* [CP] Check Pods Manifest.lock */,
 				CEE61E3727F46CF1009F111C /* Sources */,
 				CEE61E3827F46CF1009F111C /* Frameworks */,
 				CEE61E3927F46CF1009F111C /* Resources */,
@@ -366,7 +392,7 @@
 			);
 			mainGroup = CEE61E3227F46CF1009F111C;
 			packageReferences = (
-				0B93D6B1286CE65C0004BF56 /* XCRemoteSwiftPackageReference "Package_Practice3" */,
+				0B93D6B1286CE65C0004BF56 /* XCRemoteSwiftPackageReference "Package_Practice3.git" */,
 			);
 			productRefGroup = CEE61E3C27F46CF1009F111C /* Products */;
 			projectDirPath = "";
@@ -387,6 +413,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C25DD50D72BFE67CD262048D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Practice4-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CEE61E3727F46CF1009F111C /* Sources */ = {
@@ -563,6 +614,7 @@
 		};
 		CEE61E4A27F46CF5009F111C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82B8B0B7AF68F5775FC397D1 /* Pods-Practice4.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -592,6 +644,7 @@
 		};
 		CEE61E4B27F46CF5009F111C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A84238F197E8888543BDA5D /* Pods-Practice4.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -643,7 +696,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0B93D6B1286CE65C0004BF56 /* XCRemoteSwiftPackageReference "Package_Practice3" */ = {
+		0B93D6B1286CE65C0004BF56 /* XCRemoteSwiftPackageReference "Package_Practice3.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/andrew-budnitskiy/Package_Practice3.git";
 			requirement = {
@@ -656,7 +709,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		0B93D6B2286CE65C0004BF56 /* Practice3Package */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0B93D6B1286CE65C0004BF56 /* XCRemoteSwiftPackageReference "Package_Practice3" */;
+			package = 0B93D6B1286CE65C0004BF56 /* XCRemoteSwiftPackageReference "Package_Practice3.git" */;
 			productName = Practice3Package;
 		};
 /* End XCSwiftPackageProductDependency section */
